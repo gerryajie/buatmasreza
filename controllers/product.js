@@ -67,6 +67,7 @@ class Product {
   async createProduct(req, res, next) {
     try {
       const insertProduct = await product.create({
+        noInvoice: req.body.noInvoice,
         itemName: req.body.itemName,
         quantity: req.body.quantity,
         totalCogs: req.body.totalCogs,

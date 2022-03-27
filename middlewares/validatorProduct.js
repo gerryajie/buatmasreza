@@ -7,6 +7,7 @@ exports.validatorProduct = async (req, res, next) => {
     const errors = [];
 
     const schemaProduct = yup.object().shape({
+      noInvoice: yup.number().min(1).required(),
       itemName: yup.string().min(5).required(),
       quantity: yup.number().min(1).required(),
       totalCogs: yup.number().min(0).required(),
